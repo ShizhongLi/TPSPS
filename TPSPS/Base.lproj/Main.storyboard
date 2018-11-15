@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -673,7 +674,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="TPSPS" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -703,15 +704,802 @@
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="TPSPS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="870" height="590"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="CvI-0y-jOe">
+                                <rect key="frame" x="0.0" y="0.0" width="174" height="590"/>
+                                <subviews>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Kuo-dT-HoK">
+                                        <rect key="frame" x="30" y="450" width="100" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="KDk-LH-8CP"/>
+                                            <constraint firstAttribute="height" constant="40" id="eBL-hv-pVU"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="square" title="患者信息" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="3bV-pQ-pdI">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system" size="20"/>
+                                        </buttonCell>
+                                    </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="M7q-QB-Fd3">
+                                        <rect key="frame" x="30" y="310" width="100" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="O8t-el-1YM"/>
+                                            <constraint firstAttribute="width" constant="100" id="qZC-gc-adF"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="square" title="相似聚类" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Ghf-fO-FTz">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system" size="20"/>
+                                        </buttonCell>
+                                    </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XmZ-i0-umP">
+                                        <rect key="frame" x="30" y="170" width="100" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="Bgh-wz-29o"/>
+                                            <constraint firstAttribute="height" constant="40" id="Z5u-7m-y2M"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="square" title="治疗展示" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="VaC-0d-CHk">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system" size="20"/>
+                                        </buttonCell>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="M7q-QB-Fd3" firstAttribute="leading" secondItem="XmZ-i0-umP" secondAttribute="leading" id="4Kt-ab-70K"/>
+                                    <constraint firstItem="XmZ-i0-umP" firstAttribute="leading" secondItem="Kuo-dT-HoK" secondAttribute="leading" id="7k3-2S-jfZ"/>
+                                    <constraint firstItem="M7q-QB-Fd3" firstAttribute="top" secondItem="Kuo-dT-HoK" secondAttribute="bottom" constant="100" id="9F0-iX-AjQ"/>
+                                    <constraint firstItem="XmZ-i0-umP" firstAttribute="top" secondItem="M7q-QB-Fd3" secondAttribute="bottom" constant="100" id="EWn-dG-kPg"/>
+                                    <constraint firstItem="Kuo-dT-HoK" firstAttribute="leading" secondItem="CvI-0y-jOe" secondAttribute="leading" constant="30" id="F6W-e5-5eK"/>
+                                    <constraint firstItem="Kuo-dT-HoK" firstAttribute="top" secondItem="CvI-0y-jOe" secondAttribute="top" constant="100" id="JxE-qi-uWv"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.backgroundColor">
+                                        <color key="value" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </customView>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="Jow-1J-HFX">
+                                <rect key="frame" x="174" y="0.0" width="696" height="590"/>
+                                <subviews>
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="apM-cq-5SS">
+                                        <rect key="frame" x="0.0" y="0.0" width="696" height="590"/>
+                                        <subviews>
+                                            <stackView distribution="fill" orientation="vertical" alignment="centerX" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ggG-ar-vpw">
+                                                <rect key="frame" x="0.0" y="0.0" width="696" height="590"/>
+                                                <subviews>
+                                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="CTS-cO-wjg">
+                                                        <rect key="frame" x="0.0" y="540" width="696" height="50"/>
+                                                        <subviews>
+                                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Uhx-CO-scC">
+                                                                <rect key="frame" x="215" y="8" width="67" height="32"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="21" id="2gD-lM-iJW"/>
+                                                                    <constraint firstAttribute="width" constant="55" id="cxw-YT-kO3"/>
+                                                                </constraints>
+                                                                <buttonCell key="cell" type="push" title="新建" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="I6h-Vk-cLd">
+                                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                    <font key="font" metaFont="system"/>
+                                                                </buttonCell>
+                                                            </button>
+                                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PFY-9e-Pa6">
+                                                                <rect key="frame" x="415" y="8" width="67" height="32"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="55" id="Vna-ZJ-JDC"/>
+                                                                    <constraint firstAttribute="height" constant="21" id="aSK-yh-VVd"/>
+                                                                </constraints>
+                                                                <buttonCell key="cell" type="push" title="导入" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tWX-JN-QZV">
+                                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                    <font key="font" metaFont="system"/>
+                                                                </buttonCell>
+                                                            </button>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="Uhx-CO-scC" firstAttribute="centerY" secondItem="CTS-cO-wjg" secondAttribute="centerY" id="HVd-xi-rb3"/>
+                                                            <constraint firstItem="PFY-9e-Pa6" firstAttribute="centerY" secondItem="CTS-cO-wjg" secondAttribute="centerY" id="eEc-FW-83H"/>
+                                                            <constraint firstAttribute="height" constant="50" id="j4c-hw-oSe"/>
+                                                            <constraint firstItem="Uhx-CO-scC" firstAttribute="centerX" secondItem="CTS-cO-wjg" secondAttribute="centerX" constant="-100" id="kSf-0d-jIl"/>
+                                                            <constraint firstItem="PFY-9e-Pa6" firstAttribute="centerX" secondItem="CTS-cO-wjg" secondAttribute="centerX" constant="100" id="z9q-SU-K6c"/>
+                                                        </constraints>
+                                                    </customView>
+                                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="Wfa-i6-ato">
+                                                        <rect key="frame" x="0.0" y="492" width="696" height="40"/>
+                                                        <subviews>
+                                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pox-d3-L3X">
+                                                                <rect key="frame" x="18" y="12" width="44" height="17"/>
+                                                                <textFieldCell key="cell" lineBreakMode="clipping" title="年龄：" id="sLf-nl-tgU">
+                                                                    <font key="font" usesAppearanceFont="YES"/>
+                                                                    <color key="textColor" name="systemGrayColor" catalog="System" colorSpace="catalog"/>
+                                                                    <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                </textFieldCell>
+                                                            </textField>
+                                                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5g9-Sv-5GU">
+                                                                <rect key="frame" x="65" y="9" width="60" height="22"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="60" id="RKz-pa-RYO"/>
+                                                                    <constraint firstAttribute="height" constant="22" id="ypa-uH-aJJ"/>
+                                                                </constraints>
+                                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" alignment="right" drawsBackground="YES" id="wuB-b5-AQw">
+                                                                    <font key="font" metaFont="system"/>
+                                                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                </textFieldCell>
+                                                            </textField>
+                                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="276-fa-s6c">
+                                                                <rect key="frame" x="128" y="12" width="18" height="17"/>
+                                                                <textFieldCell key="cell" lineBreakMode="clipping" title="岁" id="GXD-oA-LNt">
+                                                                    <font key="font" metaFont="system"/>
+                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                </textFieldCell>
+                                                            </textField>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="276-fa-s6c" firstAttribute="centerY" secondItem="5g9-Sv-5GU" secondAttribute="centerY" id="1EA-fB-RS2"/>
+                                                            <constraint firstItem="pox-d3-L3X" firstAttribute="leading" secondItem="Wfa-i6-ato" secondAttribute="leading" constant="20" id="4jn-2O-Z9D"/>
+                                                            <constraint firstItem="pox-d3-L3X" firstAttribute="centerY" secondItem="Wfa-i6-ato" secondAttribute="centerY" id="9bB-iS-zGg"/>
+                                                            <constraint firstItem="5g9-Sv-5GU" firstAttribute="leading" secondItem="pox-d3-L3X" secondAttribute="trailing" constant="5" id="De5-Vi-RLC"/>
+                                                            <constraint firstItem="276-fa-s6c" firstAttribute="leading" secondItem="5g9-Sv-5GU" secondAttribute="trailing" constant="5" id="FNb-Kt-uVZ"/>
+                                                            <constraint firstItem="5g9-Sv-5GU" firstAttribute="centerY" secondItem="pox-d3-L3X" secondAttribute="centerY" id="ZzW-Et-NOt"/>
+                                                            <constraint firstAttribute="height" constant="40" id="jiT-R4-g1v"/>
+                                                        </constraints>
+                                                    </customView>
+                                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="8fS-dp-GCj">
+                                                        <rect key="frame" x="0.0" y="444" width="696" height="40"/>
+                                                        <subviews>
+                                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Spq-LH-gEW">
+                                                                <rect key="frame" x="18" y="12" width="44" height="17"/>
+                                                                <textFieldCell key="cell" lineBreakMode="clipping" title="性别：" id="xnc-xm-Odh">
+                                                                    <font key="font" usesAppearanceFont="YES"/>
+                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                </textFieldCell>
+                                                            </textField>
+                                                            <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ooz-bo-W7f">
+                                                                <rect key="frame" x="63" y="7" width="52" height="25"/>
+                                                                <popUpButtonCell key="cell" type="push" title="男" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="S6D-GS-sga" id="lik-1M-dVG">
+                                                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                                    <font key="font" metaFont="menu"/>
+                                                                    <menu key="menu" id="aOS-aU-f8K">
+                                                                        <items>
+                                                                            <menuItem title="男" state="on" id="S6D-GS-sga"/>
+                                                                            <menuItem title="女" id="IXz-gS-iWw"/>
+                                                                        </items>
+                                                                    </menu>
+                                                                </popUpButtonCell>
+                                                            </popUpButton>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="Ooz-bo-W7f" firstAttribute="centerY" secondItem="Spq-LH-gEW" secondAttribute="centerY" id="Gra-Ru-kxE"/>
+                                                            <constraint firstAttribute="height" constant="40" id="RV7-m1-JNy"/>
+                                                            <constraint firstItem="Spq-LH-gEW" firstAttribute="centerY" secondItem="8fS-dp-GCj" secondAttribute="centerY" id="jjX-39-toG"/>
+                                                            <constraint firstItem="Ooz-bo-W7f" firstAttribute="leading" secondItem="Spq-LH-gEW" secondAttribute="trailing" constant="5" id="seR-iL-7Mq"/>
+                                                        </constraints>
+                                                    </customView>
+                                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="8Y9-7O-J0m">
+                                                        <rect key="frame" x="0.0" y="396" width="696" height="40"/>
+                                                        <subviews>
+                                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JOm-6p-wnc">
+                                                                <rect key="frame" x="18" y="12" width="71" height="17"/>
+                                                                <textFieldCell key="cell" lineBreakMode="clipping" title="出生日期：" id="MZd-wg-iOX">
+                                                                    <font key="font" usesAppearanceFont="YES"/>
+                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                </textFieldCell>
+                                                            </textField>
+                                                            <datePicker verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lrB-8Z-k7j">
+                                                                <rect key="frame" x="92" y="9" width="100" height="27"/>
+                                                                <datePickerCell key="cell" borderStyle="bezel" alignment="left" id="CCD-9L-KfD">
+                                                                    <font key="font" metaFont="system"/>
+                                                                    <date key="date" timeIntervalSinceReferenceDate="-595929600">
+                                                                        <!--1982-02-12 16:00:00 +0000-->
+                                                                    </date>
+                                                                    <date key="minDate" timeIntervalSinceReferenceDate="-3187296343">
+                                                                        <!--1899-12-31 23:54:17 +0000-->
+                                                                    </date>
+                                                                    <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                </datePickerCell>
+                                                            </datePicker>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="JOm-6p-wnc" firstAttribute="centerY" secondItem="8Y9-7O-J0m" secondAttribute="centerY" id="B0X-Yd-Vks"/>
+                                                            <constraint firstAttribute="height" constant="40" id="LR2-JF-YBg"/>
+                                                            <constraint firstItem="lrB-8Z-k7j" firstAttribute="centerY" secondItem="JOm-6p-wnc" secondAttribute="centerY" id="PqM-bH-vkO"/>
+                                                            <constraint firstItem="lrB-8Z-k7j" firstAttribute="leading" secondItem="JOm-6p-wnc" secondAttribute="trailing" constant="5" id="ScL-tF-Tvh"/>
+                                                        </constraints>
+                                                    </customView>
+                                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="3MC-mm-mhA">
+                                                        <rect key="frame" x="0.0" y="348" width="696" height="40"/>
+                                                        <subviews>
+                                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XC2-Wg-ckp">
+                                                                <rect key="frame" x="18" y="12" width="177" height="17"/>
+                                                                <textFieldCell key="cell" lineBreakMode="clipping" title="主要诊断：慢性阻塞性肺疾病" id="B9q-zS-O36">
+                                                                    <font key="font" usesAppearanceFont="YES"/>
+                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                </textFieldCell>
+                                                            </textField>
+                                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FJM-eS-U5B">
+                                                                <rect key="frame" x="211" y="12" width="44" height="17"/>
+                                                                <textFieldCell key="cell" lineBreakMode="clipping" title="共患病" id="tB0-tV-0Dw">
+                                                                    <font key="font" metaFont="system"/>
+                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                </textFieldCell>
+                                                            </textField>
+                                                            <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GzR-bp-LRr">
+                                                                <rect key="frame" x="256" y="7" width="198" height="25"/>
+                                                                <popUpButtonCell key="cell" type="push" title="高血压病" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="bhf-nm-ZlK" id="XAb-a4-aHP">
+                                                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                                    <font key="font" metaFont="menu"/>
+                                                                    <menu key="menu" id="gxX-b9-WLl">
+                                                                        <items>
+                                                                            <menuItem title="高血压病" state="on" id="bhf-nm-ZlK"/>
+                                                                            <menuItem title="高血脂症" id="eq2-Kp-OWZ"/>
+                                                                            <menuItem title="冠心病" id="OLI-gv-sH1"/>
+                                                                            <menuItem title="前列腺增生" id="iOs-S4-4dB">
+                                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                                            </menuItem>
+                                                                            <menuItem title="糖尿病" id="1iG-ro-lji">
+                                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                                            </menuItem>
+                                                                            <menuItem title="焦虑" id="OiI-sJ-vfe">
+                                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                                            </menuItem>
+                                                                            <menuItem title="抑郁" id="bN4-v3-x3Q">
+                                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                                            </menuItem>
+                                                                            <menuItem title="心力衰竭" id="nhU-tn-0uX">
+                                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                                            </menuItem>
+                                                                            <menuItem title="心率失常" id="7Cr-NF-lqA">
+                                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                                            </menuItem>
+                                                                            <menuItem title="脑卒中" id="cBI-Gf-IxU">
+                                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                                            </menuItem>
+                                                                            <menuItem title="阻塞性睡眠呼吸暂停综合症" id="nMN-OL-Luz">
+                                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                                            </menuItem>
+                                                                            <menuItem title="骨质疏松" id="VyR-B5-uB2">
+                                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                                            </menuItem>
+                                                                            <menuItem title="类风湿性关节炎" id="FHK-Oe-yvS">
+                                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                                            </menuItem>
+                                                                            <menuItem title="弥漫性肺间质纤维化" id="Aez-1W-A6X">
+                                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                                            </menuItem>
+                                                                            <menuItem title="肺癌" id="QZ8-PI-yo3">
+                                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                                            </menuItem>
+                                                                            <menuItem title="肺栓塞" id="zcn-DU-1Gl">
+                                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                                            </menuItem>
+                                                                            <menuItem title="肺源性心脏病" id="m7z-7R-ZhI">
+                                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                                            </menuItem>
+                                                                            <menuItem title="白内障" id="d6Z-TB-gMh">
+                                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                                            </menuItem>
+                                                                            <menuItem title="静脉栓塞和血栓形成" id="aIY-Gn-vhP">
+                                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                                            </menuItem>
+                                                                            <menuItem title="哮喘" id="vpA-PZ-3S6">
+                                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                                            </menuItem>
+                                                                            <menuItem title="动脉栓塞和血栓形成" id="fJy-79-hxf">
+                                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                                            </menuItem>
+                                                                            <menuItem title="胃食管反流" id="usz-JU-xrX">
+                                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                                            </menuItem>
+                                                                            <menuItem title="变应性鼻炎" id="xlO-co-2xo">
+                                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                                            </menuItem>
+                                                                            <menuItem title="陈旧性肺结核" id="gL9-Bq-siN">
+                                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                                            </menuItem>
+                                                                            <menuItem title="低蛋白血症" id="DQA-q4-Tfa">
+                                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                                            </menuItem>
+                                                                            <menuItem title="低钾血症" id="ro0-kA-xrn">
+                                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                                            </menuItem>
+                                                                        </items>
+                                                                    </menu>
+                                                                </popUpButtonCell>
+                                                            </popUpButton>
+                                                            <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="N6F-gR-HcB">
+                                                                <rect key="frame" x="528" y="7" width="145" height="25"/>
+                                                                <popUpButtonCell key="cell" type="push" title="胆管炎" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="DFx-FS-JQM" id="zDf-Yi-BOk">
+                                                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                                    <font key="font" metaFont="menu"/>
+                                                                    <menu key="menu" id="qRP-7H-i0s">
+                                                                        <items>
+                                                                            <menuItem title="胆管炎" state="on" id="DFx-FS-JQM"/>
+                                                                            <menuItem title="胆囊息肉" id="FJA-Xn-Ivc"/>
+                                                                            <menuItem title="胆石症" id="qLP-nw-484"/>
+                                                                            <menuItem title="风湿性心脏病" id="aKD-bc-G89">
+                                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                                            </menuItem>
+                                                                            <menuItem title="腹股沟疝" id="Rct-Bn-H4E">
+                                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                                            </menuItem>
+                                                                            <menuItem title="肝恶性肿瘤" id="RzY-gd-3Ic">
+                                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                                            </menuItem>
+                                                                            <menuItem title="肝囊肿" id="TG1-a1-CS3">
+                                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                                            </menuItem>
+                                                                            <menuItem title="肝血管瘤" id="mFt-m9-44s">
+                                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                                            </menuItem>
+                                                                            <menuItem title="肝硬化" id="iGl-Tm-kSt">
+                                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                                            </menuItem>
+                                                                            <menuItem title="高尿酸血症" id="o5w-8D-EEF">
+                                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                                            </menuItem>
+                                                                            <menuItem title="急性肾衰竭" id="ys1-4M-o8h">
+                                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                                            </menuItem>
+                                                                            <menuItem title="甲状腺功能亢进症" id="cvn-8G-jn0">
+                                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                                            </menuItem>
+                                                                            <menuItem title="结肠癌" id="qPI-t4-h5q">
+                                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                                            </menuItem>
+                                                                            <menuItem title="结肠息肉" id="SVb-h9-e6d">
+                                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                                            </menuItem>
+                                                                            <menuItem title="结节性甲状腺肿" id="JaM-sQ-9Zv">
+                                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                                            </menuItem>
+                                                                            <menuItem title="结膜炎" id="GrM-4W-TII">
+                                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                                            </menuItem>
+                                                                            <menuItem title="颈动脉硬化" id="Rr9-lJ-R8I">
+                                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                                            </menuItem>
+                                                                            <menuItem title="酒精性肝病" id="7gm-0U-jGW">
+                                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                                            </menuItem>
+                                                                            <menuItem title="扩张型心肌病" id="I8x-GU-OpL">
+                                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                                            </menuItem>
+                                                                            <menuItem title="慢性胆囊炎" id="aqO-k3-NSA">
+                                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                                            </menuItem>
+                                                                            <menuItem title="慢性肾脏疾病" id="82C-07-Ym1">
+                                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                                            </menuItem>
+                                                                            <menuItem title="慢性十二指肠炎" id="KZK-he-jpo">
+                                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                                            </menuItem>
+                                                                            <menuItem title="慢性胃炎" id="uF4-Rm-WBE">
+                                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                                            </menuItem>
+                                                                            <menuItem title="门静脉血栓形成" id="BJa-2w-KZk">
+                                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                                            </menuItem>
+                                                                            <menuItem title="泌尿道感染" id="aRi-tu-p3o">
+                                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                                            </menuItem>
+                                                                            <menuItem title="脑动脉硬化" id="BaS-rh-J3X">
+                                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                                            </menuItem>
+                                                                            <menuItem title="脑萎缩" id="wBh-Pl-4Sz">
+                                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                                            </menuItem>
+                                                                            <menuItem title="帕金森病" id="TfF-qw-0ej">
+                                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                                            </menuItem>
+                                                                            <menuItem title="贫血" id="zEn-Xy-JdM">
+                                                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                                                            </menuItem>
+                                                                        </items>
+                                                                    </menu>
+                                                                </popUpButtonCell>
+                                                            </popUpButton>
+                                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AJV-ik-73a">
+                                                                <rect key="frame" x="469" y="12" width="58" height="17"/>
+                                                                <textFieldCell key="cell" lineBreakMode="clipping" title="非共患病" id="NVa-s4-4WP">
+                                                                    <font key="font" metaFont="system"/>
+                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                </textFieldCell>
+                                                            </textField>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="N6F-gR-HcB" firstAttribute="leading" secondItem="AJV-ik-73a" secondAttribute="trailing" constant="5" id="0Kz-qa-3Gy"/>
+                                                            <constraint firstItem="XC2-Wg-ckp" firstAttribute="centerY" secondItem="3MC-mm-mhA" secondAttribute="centerY" id="BRp-Dg-Usp"/>
+                                                            <constraint firstItem="AJV-ik-73a" firstAttribute="centerY" secondItem="GzR-bp-LRr" secondAttribute="centerY" id="OUf-uo-768"/>
+                                                            <constraint firstItem="GzR-bp-LRr" firstAttribute="centerY" secondItem="FJM-eS-U5B" secondAttribute="centerY" id="XUe-Oc-54x"/>
+                                                            <constraint firstItem="FJM-eS-U5B" firstAttribute="centerY" secondItem="XC2-Wg-ckp" secondAttribute="centerY" id="cfQ-gP-wtQ"/>
+                                                            <constraint firstItem="N6F-gR-HcB" firstAttribute="centerY" secondItem="AJV-ik-73a" secondAttribute="centerY" id="fRX-lf-Y1z"/>
+                                                            <constraint firstItem="GzR-bp-LRr" firstAttribute="leading" secondItem="FJM-eS-U5B" secondAttribute="trailing" constant="5" id="ncr-fL-TdY"/>
+                                                            <constraint firstAttribute="height" constant="40" id="oeC-1x-VCt"/>
+                                                            <constraint firstItem="AJV-ik-73a" firstAttribute="leading" secondItem="GzR-bp-LRr" secondAttribute="trailing" constant="20" id="pMO-sV-Trh"/>
+                                                            <constraint firstItem="FJM-eS-U5B" firstAttribute="leading" secondItem="XC2-Wg-ckp" secondAttribute="trailing" constant="20" id="rEd-Ai-uJ9"/>
+                                                        </constraints>
+                                                    </customView>
+                                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="lf3-Rx-3KX">
+                                                        <rect key="frame" x="0.0" y="300" width="696" height="40"/>
+                                                        <subviews>
+                                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="c5k-gB-Z6K">
+                                                                <rect key="frame" x="18" y="12" width="108" height="17"/>
+                                                                <textFieldCell key="cell" lineBreakMode="clipping" title="COPD患病年限：" id="f0Z-Yo-cwX">
+                                                                    <font key="font" usesAppearanceFont="YES"/>
+                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                </textFieldCell>
+                                                            </textField>
+                                                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="DBV-mK-Ds2">
+                                                                <rect key="frame" x="129" y="9" width="50" height="22"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="50" id="2RP-EL-uip"/>
+                                                                </constraints>
+                                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="I2q-P0-BdV">
+                                                                    <font key="font" metaFont="system"/>
+                                                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                </textFieldCell>
+                                                            </textField>
+                                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="J5A-Uv-BvX">
+                                                                <rect key="frame" x="182" y="12" width="18" height="17"/>
+                                                                <textFieldCell key="cell" lineBreakMode="clipping" title="年" id="IP9-WT-qdU">
+                                                                    <font key="font" metaFont="system"/>
+                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                </textFieldCell>
+                                                            </textField>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="DBV-mK-Ds2" firstAttribute="leading" secondItem="c5k-gB-Z6K" secondAttribute="trailing" constant="5" id="MNt-Xu-MHt"/>
+                                                            <constraint firstItem="c5k-gB-Z6K" firstAttribute="centerY" secondItem="lf3-Rx-3KX" secondAttribute="centerY" id="SH5-Np-tBn"/>
+                                                            <constraint firstItem="J5A-Uv-BvX" firstAttribute="leading" secondItem="DBV-mK-Ds2" secondAttribute="trailing" constant="5" id="UPW-dY-Sq3"/>
+                                                            <constraint firstItem="DBV-mK-Ds2" firstAttribute="centerY" secondItem="c5k-gB-Z6K" secondAttribute="centerY" id="VVR-X6-xkv"/>
+                                                            <constraint firstAttribute="height" constant="40" id="a1C-Wp-Oce"/>
+                                                            <constraint firstItem="J5A-Uv-BvX" firstAttribute="centerY" secondItem="DBV-mK-Ds2" secondAttribute="centerY" id="fGG-tH-lnb"/>
+                                                        </constraints>
+                                                    </customView>
+                                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="oTa-tg-bUB">
+                                                        <rect key="frame" x="0.0" y="192" width="696" height="100"/>
+                                                        <subviews>
+                                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="j9m-lv-Beu">
+                                                                <rect key="frame" x="100" y="63" width="49" height="18"/>
+                                                                <buttonCell key="cell" type="check" title="既往" bezelStyle="regularSquare" imagePosition="left" inset="2" id="4g4-Sm-8hR">
+                                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                    <font key="font" metaFont="system"/>
+                                                                </buttonCell>
+                                                            </button>
+                                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="S7K-ae-oNJ">
+                                                                <rect key="frame" x="18" y="53" width="44" height="17"/>
+                                                                <textFieldCell key="cell" lineBreakMode="clipping" title="症状：" id="gbj-cm-XPs">
+                                                                    <font key="font" metaFont="system"/>
+                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                </textFieldCell>
+                                                            </textField>
+                                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="chm-rS-kvL">
+                                                                <rect key="frame" x="68" y="53" width="31" height="17"/>
+                                                                <textFieldCell key="cell" lineBreakMode="clipping" title="咳嗽" id="XNz-qt-mgt">
+                                                                    <font key="font" metaFont="system"/>
+                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                </textFieldCell>
+                                                            </textField>
+                                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tT2-Zx-kNl">
+                                                                <rect key="frame" x="100" y="43" width="49" height="18"/>
+                                                                <buttonCell key="cell" type="check" title="近期" bezelStyle="regularSquare" imagePosition="left" inset="2" id="LxW-22-idx">
+                                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                    <font key="font" metaFont="system"/>
+                                                                </buttonCell>
+                                                            </button>
+                                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jbE-t3-g60">
+                                                                <rect key="frame" x="207" y="63" width="49" height="18"/>
+                                                                <buttonCell key="cell" type="check" title="既往" bezelStyle="regularSquare" imagePosition="left" inset="2" id="FVA-lS-Sfz">
+                                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                    <font key="font" metaFont="system"/>
+                                                                </buttonCell>
+                                                            </button>
+                                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="X6M-ow-NzJ">
+                                                                <rect key="frame" x="175" y="53" width="31" height="17"/>
+                                                                <textFieldCell key="cell" lineBreakMode="clipping" title="咳痰" id="R9H-Fd-liE">
+                                                                    <font key="font" metaFont="system"/>
+                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                </textFieldCell>
+                                                            </textField>
+                                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="D1d-Vi-EWz">
+                                                                <rect key="frame" x="282" y="53" width="31" height="17"/>
+                                                                <textFieldCell key="cell" lineBreakMode="clipping" title="胸闷" id="CqB-hn-VRq">
+                                                                    <font key="font" metaFont="system"/>
+                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                </textFieldCell>
+                                                            </textField>
+                                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ldZ-t5-Osv">
+                                                                <rect key="frame" x="389" y="53" width="31" height="17"/>
+                                                                <textFieldCell key="cell" lineBreakMode="clipping" title="喘息" id="C1K-BL-m9z">
+                                                                    <font key="font" metaFont="system"/>
+                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                </textFieldCell>
+                                                            </textField>
+                                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tB5-Uq-vvP">
+                                                                <rect key="frame" x="314" y="63" width="49" height="18"/>
+                                                                <buttonCell key="cell" type="check" title="既往" bezelStyle="regularSquare" imagePosition="left" inset="2" id="AYi-FS-zdz">
+                                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                    <font key="font" metaFont="system"/>
+                                                                </buttonCell>
+                                                            </button>
+                                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bYy-4A-dry">
+                                                                <rect key="frame" x="421" y="63" width="49" height="18"/>
+                                                                <buttonCell key="cell" type="check" title="既往" bezelStyle="regularSquare" imagePosition="left" inset="2" id="eP3-LR-VVF">
+                                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                    <font key="font" metaFont="system"/>
+                                                                </buttonCell>
+                                                            </button>
+                                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="EJp-R9-JnP">
+                                                                <rect key="frame" x="528" y="63" width="49" height="18"/>
+                                                                <buttonCell key="cell" type="check" title="既往" bezelStyle="regularSquare" imagePosition="left" inset="2" id="FZn-o3-bzQ">
+                                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                    <font key="font" metaFont="system"/>
+                                                                </buttonCell>
+                                                            </button>
+                                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Tm7-Cd-eIh">
+                                                                <rect key="frame" x="207" y="43" width="49" height="18"/>
+                                                                <buttonCell key="cell" type="check" title="近期" bezelStyle="regularSquare" imagePosition="left" inset="2" id="MO5-QT-v29">
+                                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                    <font key="font" metaFont="system"/>
+                                                                </buttonCell>
+                                                            </button>
+                                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bGM-5H-0O0">
+                                                                <rect key="frame" x="314" y="43" width="49" height="18"/>
+                                                                <buttonCell key="cell" type="check" title="近期" bezelStyle="regularSquare" imagePosition="left" inset="2" id="7bS-3N-1XD">
+                                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                    <font key="font" metaFont="system"/>
+                                                                </buttonCell>
+                                                            </button>
+                                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PU4-pr-Jch">
+                                                                <rect key="frame" x="421" y="43" width="49" height="18"/>
+                                                                <buttonCell key="cell" type="check" title="近期" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Wod-Vf-zbg">
+                                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                    <font key="font" metaFont="system"/>
+                                                                </buttonCell>
+                                                            </button>
+                                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="r2O-AS-9QG">
+                                                                <rect key="frame" x="528" y="43" width="49" height="18"/>
+                                                                <buttonCell key="cell" type="check" title="近期" bezelStyle="regularSquare" imagePosition="left" inset="2" id="bhI-mI-3JH">
+                                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                    <font key="font" metaFont="system"/>
+                                                                </buttonCell>
+                                                            </button>
+                                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1PK-RN-LyB">
+                                                                <rect key="frame" x="68" y="9" width="49" height="18"/>
+                                                                <buttonCell key="cell" type="check" title="咳血" bezelStyle="regularSquare" imagePosition="left" inset="2" id="8SY-ei-2V1">
+                                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                    <font key="font" metaFont="system"/>
+                                                                </buttonCell>
+                                                            </button>
+                                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cf8-na-hFz">
+                                                                <rect key="frame" x="143" y="9" width="49" height="18"/>
+                                                                <buttonCell key="cell" type="check" title="发热" bezelStyle="regularSquare" imagePosition="left" inset="2" id="OZe-qC-rvl">
+                                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                    <font key="font" metaFont="system"/>
+                                                                </buttonCell>
+                                                            </button>
+                                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Nh6-EM-hP1">
+                                                                <rect key="frame" x="218" y="9" width="49" height="18"/>
+                                                                <buttonCell key="cell" type="check" title="胸痛" bezelStyle="regularSquare" imagePosition="left" inset="2" id="TPT-7z-X1w">
+                                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                    <font key="font" metaFont="system"/>
+                                                                </buttonCell>
+                                                            </button>
+                                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PL5-xG-2f5">
+                                                                <rect key="frame" x="293" y="9" width="49" height="18"/>
+                                                                <buttonCell key="cell" type="check" title="心悸" bezelStyle="regularSquare" imagePosition="left" inset="2" id="Lgw-jz-NtX">
+                                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                    <font key="font" metaFont="system"/>
+                                                                </buttonCell>
+                                                            </button>
+                                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LVp-IA-1md">
+                                                                <rect key="frame" x="368" y="9" width="142" height="18"/>
+                                                                <buttonCell key="cell" type="check" title="夜间阵发性呼吸困难" bezelStyle="regularSquare" imagePosition="left" inset="2" id="SF0-EU-74c">
+                                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                    <font key="font" metaFont="system"/>
+                                                                </buttonCell>
+                                                            </button>
+                                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3UT-jk-CFg">
+                                                                <rect key="frame" x="536" y="9" width="89" height="18"/>
+                                                                <buttonCell key="cell" type="check" title="双下肢水肿" bezelStyle="regularSquare" imagePosition="left" inset="2" id="nwB-o3-nmF">
+                                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                                    <font key="font" metaFont="system"/>
+                                                                </buttonCell>
+                                                            </button>
+                                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="e9B-r2-18D">
+                                                                <rect key="frame" x="496" y="53" width="31" height="17"/>
+                                                                <textFieldCell key="cell" lineBreakMode="clipping" title="气促" id="Tbl-V3-PC4">
+                                                                    <font key="font" metaFont="system"/>
+                                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                </textFieldCell>
+                                                            </textField>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="Tm7-Cd-eIh" firstAttribute="leading" secondItem="jbE-t3-g60" secondAttribute="leading" id="0pa-OW-KQH"/>
+                                                            <constraint firstItem="Tm7-Cd-eIh" firstAttribute="centerY" secondItem="X6M-ow-NzJ" secondAttribute="centerY" constant="10" id="2d2-oc-KZY"/>
+                                                            <constraint firstItem="3UT-jk-CFg" firstAttribute="leading" secondItem="LVp-IA-1md" secondAttribute="trailing" constant="30" id="4qg-Y6-elO"/>
+                                                            <constraint firstItem="EJp-R9-JnP" firstAttribute="centerY" secondItem="e9B-r2-18D" secondAttribute="centerY" constant="-10" id="61s-sQ-IkM"/>
+                                                            <constraint firstItem="e9B-r2-18D" firstAttribute="centerY" secondItem="ldZ-t5-Osv" secondAttribute="centerY" id="6Ja-2O-Xf5"/>
+                                                            <constraint firstItem="bYy-4A-dry" firstAttribute="centerY" secondItem="ldZ-t5-Osv" secondAttribute="centerY" constant="-10" id="6Lz-KH-S3O"/>
+                                                            <constraint firstItem="X6M-ow-NzJ" firstAttribute="centerY" secondItem="chm-rS-kvL" secondAttribute="centerY" id="9RS-kR-0Cp"/>
+                                                            <constraint firstItem="1PK-RN-LyB" firstAttribute="top" secondItem="tT2-Zx-kNl" secondAttribute="bottom" constant="20" id="AHW-Mo-6B1"/>
+                                                            <constraint firstItem="LVp-IA-1md" firstAttribute="leading" secondItem="PL5-xG-2f5" secondAttribute="trailing" constant="30" id="ARE-Hp-P2t"/>
+                                                            <constraint firstItem="tB5-Uq-vvP" firstAttribute="leading" secondItem="D1d-Vi-EWz" secondAttribute="trailing" constant="5" id="BBU-PJ-E2v"/>
+                                                            <constraint firstItem="Nh6-EM-hP1" firstAttribute="leading" secondItem="cf8-na-hFz" secondAttribute="trailing" constant="30" id="DIJ-1k-1dy"/>
+                                                            <constraint firstItem="tB5-Uq-vvP" firstAttribute="centerY" secondItem="D1d-Vi-EWz" secondAttribute="centerY" constant="-10" id="Dga-5y-te7"/>
+                                                            <constraint firstItem="PU4-pr-Jch" firstAttribute="centerY" secondItem="ldZ-t5-Osv" secondAttribute="centerY" constant="10" id="GCg-Go-KEY"/>
+                                                            <constraint firstItem="jbE-t3-g60" firstAttribute="leading" secondItem="X6M-ow-NzJ" secondAttribute="trailing" constant="5" id="GZP-B4-v2S"/>
+                                                            <constraint firstItem="chm-rS-kvL" firstAttribute="centerY" secondItem="S7K-ae-oNJ" secondAttribute="centerY" id="Gim-oH-Qi0"/>
+                                                            <constraint firstItem="bGM-5H-0O0" firstAttribute="centerY" secondItem="D1d-Vi-EWz" secondAttribute="centerY" constant="10" id="HQ0-RI-g2E"/>
+                                                            <constraint firstItem="D1d-Vi-EWz" firstAttribute="leading" secondItem="jbE-t3-g60" secondAttribute="trailing" constant="30" id="ICO-tg-Cdo"/>
+                                                            <constraint firstItem="tT2-Zx-kNl" firstAttribute="leading" secondItem="j9m-lv-Beu" secondAttribute="leading" id="PwO-pL-P0H"/>
+                                                            <constraint firstItem="j9m-lv-Beu" firstAttribute="leading" secondItem="chm-rS-kvL" secondAttribute="trailing" constant="5" id="R80-hD-ggh"/>
+                                                            <constraint firstItem="S7K-ae-oNJ" firstAttribute="top" secondItem="oTa-tg-bUB" secondAttribute="top" constant="30" id="RWp-S0-opW"/>
+                                                            <constraint firstItem="LVp-IA-1md" firstAttribute="centerY" secondItem="PL5-xG-2f5" secondAttribute="centerY" id="S5O-NB-Ghq"/>
+                                                            <constraint firstItem="chm-rS-kvL" firstAttribute="leading" secondItem="S7K-ae-oNJ" secondAttribute="trailing" constant="10" id="XTo-8y-l7E"/>
+                                                            <constraint firstItem="r2O-AS-9QG" firstAttribute="leading" secondItem="EJp-R9-JnP" secondAttribute="leading" id="Xy5-yJ-vKE"/>
+                                                            <constraint firstItem="PL5-xG-2f5" firstAttribute="leading" secondItem="Nh6-EM-hP1" secondAttribute="trailing" constant="30" id="Y8R-dJ-ZGi"/>
+                                                            <constraint firstItem="tT2-Zx-kNl" firstAttribute="centerY" secondItem="chm-rS-kvL" secondAttribute="centerY" constant="10" id="aYz-0T-S1G"/>
+                                                            <constraint firstItem="EJp-R9-JnP" firstAttribute="leading" secondItem="e9B-r2-18D" secondAttribute="trailing" constant="5" id="djP-kf-lti"/>
+                                                            <constraint firstItem="PL5-xG-2f5" firstAttribute="centerY" secondItem="Nh6-EM-hP1" secondAttribute="centerY" id="dkq-L3-agv"/>
+                                                            <constraint firstItem="Nh6-EM-hP1" firstAttribute="centerY" secondItem="cf8-na-hFz" secondAttribute="centerY" id="e5T-VD-AgM"/>
+                                                            <constraint firstItem="bYy-4A-dry" firstAttribute="leading" secondItem="ldZ-t5-Osv" secondAttribute="trailing" constant="5" id="eiJ-Az-b35"/>
+                                                            <constraint firstItem="e9B-r2-18D" firstAttribute="leading" secondItem="bYy-4A-dry" secondAttribute="trailing" constant="30" id="fwI-dN-SIs"/>
+                                                            <constraint firstItem="ldZ-t5-Osv" firstAttribute="leading" secondItem="tB5-Uq-vvP" secondAttribute="trailing" constant="30" id="gJt-Ou-cIG"/>
+                                                            <constraint firstItem="ldZ-t5-Osv" firstAttribute="centerY" secondItem="D1d-Vi-EWz" secondAttribute="centerY" id="gPE-iO-xrX"/>
+                                                            <constraint firstAttribute="height" constant="100" id="gSx-EG-0NK"/>
+                                                            <constraint firstItem="D1d-Vi-EWz" firstAttribute="centerY" secondItem="X6M-ow-NzJ" secondAttribute="centerY" id="iPO-Bw-Vb4"/>
+                                                            <constraint firstItem="r2O-AS-9QG" firstAttribute="centerY" secondItem="e9B-r2-18D" secondAttribute="centerY" constant="10" id="jPd-fD-L2K"/>
+                                                            <constraint firstItem="j9m-lv-Beu" firstAttribute="centerY" secondItem="chm-rS-kvL" secondAttribute="centerY" constant="-10" id="kH5-NN-HEs"/>
+                                                            <constraint firstItem="1PK-RN-LyB" firstAttribute="leading" secondItem="chm-rS-kvL" secondAttribute="leading" id="l92-rl-eBY"/>
+                                                            <constraint firstItem="jbE-t3-g60" firstAttribute="centerY" secondItem="X6M-ow-NzJ" secondAttribute="centerY" constant="-10" id="mSs-JS-tWM"/>
+                                                            <constraint firstItem="X6M-ow-NzJ" firstAttribute="leading" secondItem="j9m-lv-Beu" secondAttribute="trailing" constant="30" id="pG3-12-6t2"/>
+                                                            <constraint firstItem="cf8-na-hFz" firstAttribute="centerY" secondItem="1PK-RN-LyB" secondAttribute="centerY" id="qQf-E4-FLX"/>
+                                                            <constraint firstItem="bGM-5H-0O0" firstAttribute="leading" secondItem="tB5-Uq-vvP" secondAttribute="leading" id="sMX-An-P3Z"/>
+                                                            <constraint firstItem="3UT-jk-CFg" firstAttribute="centerY" secondItem="LVp-IA-1md" secondAttribute="centerY" id="uhf-6T-mgR"/>
+                                                            <constraint firstItem="cf8-na-hFz" firstAttribute="leading" secondItem="1PK-RN-LyB" secondAttribute="trailing" constant="30" id="unm-qg-zsD"/>
+                                                            <constraint firstItem="PU4-pr-Jch" firstAttribute="leading" secondItem="bYy-4A-dry" secondAttribute="leading" id="yj5-Y0-rUb"/>
+                                                        </constraints>
+                                                    </customView>
+                                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="uI6-sS-o58">
+                                                        <rect key="frame" x="0.0" y="144" width="696" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="LbU-Eg-28h"/>
+                                                        </constraints>
+                                                    </customView>
+                                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="gd9-9O-FGR">
+                                                        <rect key="frame" x="0.0" y="96" width="696" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="ue0-9q-41d"/>
+                                                        </constraints>
+                                                    </customView>
+                                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="lpt-3y-d8g">
+                                                        <rect key="frame" x="0.0" y="48" width="696" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="boV-kV-QyW"/>
+                                                        </constraints>
+                                                    </customView>
+                                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="Ddn-1s-khP">
+                                                        <rect key="frame" x="0.0" y="0.0" width="696" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="EJm-Q5-6qy"/>
+                                                        </constraints>
+                                                    </customView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="gd9-9O-FGR" secondAttribute="trailing" id="1Qn-5c-ewG"/>
+                                                    <constraint firstAttribute="trailing" secondItem="CTS-cO-wjg" secondAttribute="trailing" id="1jo-g7-GYE"/>
+                                                    <constraint firstItem="gd9-9O-FGR" firstAttribute="leading" secondItem="ggG-ar-vpw" secondAttribute="leading" id="3C1-eJ-ahd"/>
+                                                    <constraint firstAttribute="trailing" secondItem="8Y9-7O-J0m" secondAttribute="trailing" id="CFB-w2-AEe"/>
+                                                    <constraint firstItem="XC2-Wg-ckp" firstAttribute="leading" secondItem="JOm-6p-wnc" secondAttribute="leading" id="Cad-v2-ADx"/>
+                                                    <constraint firstItem="lf3-Rx-3KX" firstAttribute="leading" secondItem="ggG-ar-vpw" secondAttribute="leading" id="Dez-o0-cEB"/>
+                                                    <constraint firstItem="uI6-sS-o58" firstAttribute="leading" secondItem="ggG-ar-vpw" secondAttribute="leading" id="FM6-D3-Z2c"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Ddn-1s-khP" secondAttribute="trailing" id="FRy-HG-QBf"/>
+                                                    <constraint firstItem="Spq-LH-gEW" firstAttribute="leading" secondItem="pox-d3-L3X" secondAttribute="leading" id="FjX-I3-XRY"/>
+                                                    <constraint firstItem="oTa-tg-bUB" firstAttribute="leading" secondItem="ggG-ar-vpw" secondAttribute="leading" id="HcD-ya-CzT"/>
+                                                    <constraint firstAttribute="trailing" secondItem="uI6-sS-o58" secondAttribute="trailing" id="LUv-J3-HNN"/>
+                                                    <constraint firstAttribute="trailing" secondItem="oTa-tg-bUB" secondAttribute="trailing" id="MZn-ng-yvp"/>
+                                                    <constraint firstItem="CTS-cO-wjg" firstAttribute="leading" secondItem="ggG-ar-vpw" secondAttribute="leading" id="PUG-Pw-rlO"/>
+                                                    <constraint firstItem="3MC-mm-mhA" firstAttribute="leading" secondItem="ggG-ar-vpw" secondAttribute="leading" id="QjI-pG-6qK"/>
+                                                    <constraint firstItem="S7K-ae-oNJ" firstAttribute="leading" secondItem="c5k-gB-Z6K" secondAttribute="leading" id="TyD-sq-yXw"/>
+                                                    <constraint firstAttribute="trailing" secondItem="8fS-dp-GCj" secondAttribute="trailing" id="YM7-Yw-5Pf"/>
+                                                    <constraint firstItem="lpt-3y-d8g" firstAttribute="leading" secondItem="ggG-ar-vpw" secondAttribute="leading" id="Zj9-cd-tUB"/>
+                                                    <constraint firstItem="8fS-dp-GCj" firstAttribute="leading" secondItem="ggG-ar-vpw" secondAttribute="leading" id="dEM-DZ-SQy"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Wfa-i6-ato" secondAttribute="trailing" id="dTt-6e-faA"/>
+                                                    <constraint firstAttribute="trailing" secondItem="lpt-3y-d8g" secondAttribute="trailing" id="dyq-BE-PNb"/>
+                                                    <constraint firstItem="8Y9-7O-J0m" firstAttribute="leading" secondItem="ggG-ar-vpw" secondAttribute="leading" id="fhz-Mt-skL"/>
+                                                    <constraint firstAttribute="trailing" secondItem="lf3-Rx-3KX" secondAttribute="trailing" id="l5g-gm-ASM"/>
+                                                    <constraint firstItem="Wfa-i6-ato" firstAttribute="leading" secondItem="ggG-ar-vpw" secondAttribute="leading" id="rFh-5g-rqE"/>
+                                                    <constraint firstItem="c5k-gB-Z6K" firstAttribute="leading" secondItem="XC2-Wg-ckp" secondAttribute="leading" id="t1d-f9-oou"/>
+                                                    <constraint firstAttribute="trailing" secondItem="3MC-mm-mhA" secondAttribute="trailing" id="tvX-uy-94O"/>
+                                                    <constraint firstItem="JOm-6p-wnc" firstAttribute="leading" secondItem="Spq-LH-gEW" secondAttribute="leading" id="ueA-Mv-Hak"/>
+                                                    <constraint firstItem="Ddn-1s-khP" firstAttribute="leading" secondItem="ggG-ar-vpw" secondAttribute="leading" id="vT5-Tm-srb"/>
+                                                </constraints>
+                                                <visibilityPriorities>
+                                                    <integer value="1000"/>
+                                                    <integer value="1000"/>
+                                                    <integer value="1000"/>
+                                                    <integer value="1000"/>
+                                                    <integer value="1000"/>
+                                                    <integer value="1000"/>
+                                                    <integer value="1000"/>
+                                                    <integer value="1000"/>
+                                                    <integer value="1000"/>
+                                                    <integer value="1000"/>
+                                                    <integer value="1000"/>
+                                                </visibilityPriorities>
+                                                <customSpacing>
+                                                    <real value="3.4028234663852886e+38"/>
+                                                    <real value="3.4028234663852886e+38"/>
+                                                    <real value="3.4028234663852886e+38"/>
+                                                    <real value="3.4028234663852886e+38"/>
+                                                    <real value="3.4028234663852886e+38"/>
+                                                    <real value="3.4028234663852886e+38"/>
+                                                    <real value="3.4028234663852886e+38"/>
+                                                    <real value="3.4028234663852886e+38"/>
+                                                    <real value="3.4028234663852886e+38"/>
+                                                    <real value="3.4028234663852886e+38"/>
+                                                    <real value="3.4028234663852886e+38"/>
+                                                </customSpacing>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="ggG-ar-vpw" firstAttribute="top" secondItem="apM-cq-5SS" secondAttribute="top" id="O7m-aQ-Am0"/>
+                                            <constraint firstItem="ggG-ar-vpw" firstAttribute="leading" secondItem="apM-cq-5SS" secondAttribute="leading" id="TWN-B6-rDp"/>
+                                            <constraint firstAttribute="trailing" secondItem="ggG-ar-vpw" secondAttribute="trailing" id="bA5-87-AfR"/>
+                                            <constraint firstAttribute="bottom" secondItem="ggG-ar-vpw" secondAttribute="bottom" id="hSR-u0-pws"/>
+                                        </constraints>
+                                    </customView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="apM-cq-5SS" secondAttribute="trailing" id="7f2-sf-RUn"/>
+                                    <constraint firstAttribute="bottom" secondItem="apM-cq-5SS" secondAttribute="bottom" id="fD9-XY-RTg"/>
+                                    <constraint firstItem="apM-cq-5SS" firstAttribute="leading" secondItem="Jow-1J-HFX" secondAttribute="leading" id="ffz-08-LaC"/>
+                                    <constraint firstItem="apM-cq-5SS" firstAttribute="top" secondItem="Jow-1J-HFX" secondAttribute="top" id="kyV-jl-WNV"/>
+                                </constraints>
+                            </customView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Jow-1J-HFX" secondAttribute="trailing" id="6Ya-Ox-jeX"/>
+                            <constraint firstAttribute="bottom" secondItem="CvI-0y-jOe" secondAttribute="bottom" id="G2q-yn-3Ij"/>
+                            <constraint firstItem="Jow-1J-HFX" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="Mxe-hO-mTl"/>
+                            <constraint firstItem="CvI-0y-jOe" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="NRi-Yf-Hp9"/>
+                            <constraint firstItem="CvI-0y-jOe" firstAttribute="width" secondItem="m2S-Jp-Qdl" secondAttribute="width" multiplier="0.2" id="TFS-ef-viO"/>
+                            <constraint firstItem="Jow-1J-HFX" firstAttribute="leading" secondItem="CvI-0y-jOe" secondAttribute="trailing" id="Vkb-OS-mu3"/>
+                            <constraint firstAttribute="bottom" secondItem="Jow-1J-HFX" secondAttribute="bottom" id="efy-YD-qwe"/>
+                            <constraint firstItem="CvI-0y-jOe" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="odN-4T-WqG"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mainContainerView" destination="m2S-Jp-Qdl" id="X5Y-Gk-RNR"/>
+                        <outlet property="mainFuncContainerView" destination="Jow-1J-HFX" id="kaz-f0-JuA"/>
+                        <outlet property="navView" destination="CvI-0y-jOe" id="9P5-lP-wjd"/>
+                        <outlet property="patientInfoTabBtn" destination="Kuo-dT-HoK" id="10U-Yb-wkH"/>
+                        <outlet property="patientInfoTotalStackView" destination="ggG-ar-vpw" id="dD2-O3-jsH"/>
+                        <outlet property="patientInfoView" destination="apM-cq-5SS" id="Llg-iR-jQg"/>
+                        <outlet property="similariPatientSearchTabBtn" destination="M7q-QB-Fd3" id="Oa3-fw-7Xe"/>
+                        <outlet property="treatmentShowTabBtn" destination="XmZ-i0-umP" id="Kok-q4-869"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="270" y="716.5"/>
         </scene>
     </scenes>
 </document>

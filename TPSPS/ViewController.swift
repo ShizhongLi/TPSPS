@@ -9,11 +9,23 @@
 import Cocoa
 
 class ViewController: NSViewController {
-
+    
+    @IBOutlet var mainContainerView: NSView!
+    @IBOutlet weak var navView: NSView!
+    
+    @IBOutlet weak var patientInfoTabBtn: NSButton!
+    @IBOutlet weak var similariPatientSearchTabBtn: NSButton!
+    @IBOutlet weak var treatmentShowTabBtn: NSButton!
+    
+    @IBOutlet weak var mainFuncContainerView: NSView!
+    @IBOutlet weak var patientInfoView: NSView!
+    @IBOutlet weak var patientInfoTotalStackView: NSStackView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        
     }
 
     override var representedObject: Any? {
@@ -22,6 +34,6 @@ class ViewController: NSViewController {
         }
     }
 
-
+    
 }
 
