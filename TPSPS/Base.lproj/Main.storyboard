@@ -1777,13 +1777,48 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="ageTF" destination="5g9-Sv-5GU" id="iTS-yv-k4T"/>
+                        <outlet property="birthDP" destination="lrB-8Z-k7j" id="cyU-Rn-6w3"/>
+                        <outlet property="breathExam2PUB" destination="YlH-rQ-z9a" id="xAD-93-Bx9"/>
+                        <outlet property="breathExam3PUB" destination="xwb-PW-oTE" id="edf-cr-B5o"/>
+                        <outlet property="breathFuncExamPUB" destination="lCi-jO-xcd" id="ROZ-Uh-Peb"/>
+                        <outlet property="breathFuncMeasurePUB" destination="u81-wq-D0I" id="vpL-dr-H7P"/>
+                        <outlet property="coDIseasePUB" destination="GzR-bp-LRr" id="xsr-M4-bjK"/>
+                        <outlet property="creatNewBtn" destination="Uhx-CO-scC" id="Csk-Le-hKD"/>
+                        <outlet property="importNewBtn" destination="PFY-9e-Pa6" id="J8f-8b-Clu"/>
                         <outlet property="mainContainerView" destination="m2S-Jp-Qdl" id="X5Y-Gk-RNR"/>
                         <outlet property="mainFuncContainerView" destination="Jow-1J-HFX" id="kaz-f0-JuA"/>
                         <outlet property="navView" destination="CvI-0y-jOe" id="9P5-lP-wjd"/>
+                        <outlet property="nonCoDiseasePUB" destination="N6F-gR-HcB" id="AsY-dn-Px2"/>
+                        <outlet property="ownDiseaseYearTF" destination="DBV-mK-Ds2" id="1UN-c7-6Aw"/>
+                        <outlet property="pastYearWorseCountTF" destination="B1V-Yu-8Mg" id="xZc-lw-9v8"/>
                         <outlet property="patientInfoTabBtn" destination="Kuo-dT-HoK" id="10U-Yb-wkH"/>
                         <outlet property="patientInfoTotalStackView" destination="ggG-ar-vpw" id="dD2-O3-jsH"/>
                         <outlet property="patientInfoView" destination="apM-cq-5SS" id="Llg-iR-jQg"/>
+                        <outlet property="recentTreatmentPUB" destination="fE3-ai-d0t" id="FEc-7S-YxS"/>
+                        <outlet property="sexPUB" destination="Ooz-bo-W7f" id="nTs-9h-hta"/>
                         <outlet property="similariPatientSearchTabBtn" destination="M7q-QB-Fd3" id="Oa3-fw-7Xe"/>
+                        <outlet property="smokeBaoNianTF" destination="cgH-CU-LDc" id="yZF-OJ-DhD"/>
+                        <outlet property="smokeHistoryPUB" destination="wXU-9H-JaQ" id="cuu-mW-np5"/>
+                        <outlet property="smokeHistoryYearTF" destination="p7G-Ea-3Pc" id="rdQ-FV-2zz"/>
+                        <outlet property="smokeMeasureNumTF" destination="Kgo-W7-U1b" id="XPd-t9-PtL"/>
+                        <outlet property="smokeMeasureUnitPUB" destination="sq0-GH-Ksc" id="Rwc-7z-rTK"/>
+                        <outlet property="symptomR1N1PastCB" destination="j9m-lv-Beu" id="Ftu-Sa-2lT"/>
+                        <outlet property="symptomR1N1RecentCB" destination="tT2-Zx-kNl" id="9ec-H1-GHZ"/>
+                        <outlet property="symptomR1N2PastCB" destination="jbE-t3-g60" id="o2c-1p-pvb"/>
+                        <outlet property="symptomR1N2RecentCB" destination="Tm7-Cd-eIh" id="j54-wi-3Ok"/>
+                        <outlet property="symptomR1N3PastCB" destination="tB5-Uq-vvP" id="bEH-Af-YxW"/>
+                        <outlet property="symptomR1N3RecentCB" destination="bGM-5H-0O0" id="x3G-RM-V1J"/>
+                        <outlet property="symptomR1N4PastCB" destination="bYy-4A-dry" id="Etk-6z-mk6"/>
+                        <outlet property="symptomR1N4RecentCB" destination="PU4-pr-Jch" id="Rkc-jv-p04"/>
+                        <outlet property="symptomR1N5PastCB" destination="EJp-R9-JnP" id="rNE-27-QRy"/>
+                        <outlet property="symptomR1N5RecentCB" destination="r2O-AS-9QG" id="BLm-jD-hau"/>
+                        <outlet property="symptomR2N1CB" destination="1PK-RN-LyB" id="uyS-QI-pOq"/>
+                        <outlet property="symptomR2N2CB" destination="cf8-na-hFz" id="h3K-zE-ojT"/>
+                        <outlet property="symptomR2N3CB" destination="Nh6-EM-hP1" id="yft-Sc-vF5"/>
+                        <outlet property="symptomR2N4CB" destination="PL5-xG-2f5" id="n66-H8-83G"/>
+                        <outlet property="symptomR2N5CB" destination="LVp-IA-1md" id="I6j-bU-BqH"/>
+                        <outlet property="symptomR2N6CB" destination="3UT-jk-CFg" id="gbP-oF-Fat"/>
                         <outlet property="treatmentShowTabBtn" destination="XmZ-i0-umP" id="Kok-q4-869"/>
                     </connections>
                 </viewController>
