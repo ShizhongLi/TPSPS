@@ -11,6 +11,11 @@ import Cocoa
 class ImportPatientVC: NSViewController {
     
     var pageController:MainPageController?
+    
+    @IBOutlet weak var patientID: NSTextField!
+    @IBOutlet weak var patientInHospitalID: NSTextField!
+    @IBOutlet weak var patientInfoSV: NSScrollView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,4 +27,17 @@ class ImportPatientVC: NSViewController {
             self.pageController?.selectedIndex = 0
         }
     }
+    
+    
+    @IBAction func clickSearchByIDBtn(_ sender: Any) {
+    }
+    
+    
+    @IBAction func clickResetBtn(_ sender: NSButton) {
+    }
+    
+    @IBAction func clickSearchSimilarPatientBtn(_ sender: NSButton) {
+    }
+    
+    
 }
