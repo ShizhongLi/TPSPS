@@ -7,8 +7,11 @@
 //
 
 import Cocoa
+import SnapKit
 
 class ViewController: NSViewController {
+    
+    var pageController:MainPageController?
     
     @IBOutlet var mainContainerView: NSView!
     @IBOutlet weak var navView: NSView!
@@ -61,20 +64,41 @@ class ViewController: NSViewController {
     @IBOutlet weak var breathExam3PUB: NSPopUpButton!
     @IBOutlet weak var recentTreatmentPUB: NSPopUpButton!
     
-    
+//    var testView = NSView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        view.layer?.backgroundColor = NSColor.darkGray.cgColor
+        
+//        self.view.addSubview(testView)
+//        testView.snp.makeConstraints { (make) -> Void in
+//            make.width.height.equalTo(50)
+//            make.center.equalTo(self.view)
+//        }
+        
+    }
+    
+    override func viewDidAppear() {
+        //TODO: 无效，暂时不知原因
+        navView!.layer?.backgroundColor = NSColor.green.cgColor
         
     }
 
     override var representedObject: Any? {
         didSet {
         // Update the view, if already loaded.
+//            self.navView?.layer?.backgroundColor = NSColor.green.cgColor
         }
     }
-
+    
+    
+    @IBAction func clickImportNewBtn(_ sender: NSButton) {
+        if self.pageController != nil {
+            self.pageController?.selectedIndex = 1
+        }
+    }
+    
     
 }
 

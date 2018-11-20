@@ -694,17 +694,81 @@
                         </connections>
                     </window>
                     <connections>
-                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
+                        <segue destination="C0y-dw-Vms" kind="relationship" relationship="window.shadowedContentViewController" id="81S-tH-px0"/>
                     </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
+        <!--Main Page Controller-->
+        <scene sceneID="flc-cV-PTU">
+            <objects>
+                <pagecontroller id="C0y-dw-Vms" customClass="MainPageController" customModule="TPSPS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="ElB-zg-eCF">
+                        <rect key="frame" x="0.0" y="0.0" width="870" height="590"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </pagecontroller>
+                <customObject id="PnZ-9l-Chs" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="866" y="206"/>
+        </scene>
+        <!--Import PatientVC-->
+        <scene sceneID="Egq-TB-Q1m">
+            <objects>
+                <viewController storyboardIdentifier="ImportPatientVC" id="HZc-5j-00S" customClass="ImportPatientVC" customModule="TPSPS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="b8s-fC-wz7">
+                        <rect key="frame" x="0.0" y="0.0" width="870" height="590"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ms8-8u-ffG">
+                                <rect key="frame" x="59" y="518" width="98" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="98" id="1WD-jZ-FXI"/>
+                                    <constraint firstAttribute="height" constant="22" id="jDb-cb-aJL"/>
+                                </constraints>
+                                <buttonCell key="cell" type="roundTextured" title="返回" bezelStyle="texturedRounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="O3c-l9-cp6">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="clickBackBtn:" target="HZc-5j-00S" id="jZI-w3-PRS"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4YR-MO-8De">
+                                <rect key="frame" x="161" y="441" width="97" height="17"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="患者唯一标识符" id="6X3-Ln-M3C">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qxr-RK-Aq0">
+                                <rect key="frame" x="286" y="438" width="204" height="22"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="2d2-P9-dKI">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Ms8-8u-ffG" firstAttribute="leading" secondItem="b8s-fC-wz7" secondAttribute="leading" constant="59" id="NWI-yP-5GU"/>
+                            <constraint firstItem="Ms8-8u-ffG" firstAttribute="top" secondItem="b8s-fC-wz7" secondAttribute="top" constant="49" id="g2m-vz-VUc"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="7f0-ez-Jnk" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1019" y="858"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="TPSPS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InitVC" id="XfG-lQ-9wD" customClass="ViewController" customModule="TPSPS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="870" height="590"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -754,11 +818,6 @@
                                     <constraint firstItem="Kuo-dT-HoK" firstAttribute="leading" secondItem="CvI-0y-jOe" secondAttribute="leading" constant="30" id="F6W-e5-5eK"/>
                                     <constraint firstItem="Kuo-dT-HoK" firstAttribute="top" secondItem="CvI-0y-jOe" secondAttribute="top" constant="100" id="JxE-qi-uWv"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.backgroundColor">
-                                        <color key="value" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                             </customView>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="Jow-1J-HFX">
                                 <rect key="frame" x="174" y="0.0" width="696" height="590"/>
@@ -793,6 +852,9 @@
                                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                     <font key="font" metaFont="system"/>
                                                                 </buttonCell>
+                                                                <connections>
+                                                                    <action selector="clickImportNewBtn:" target="XfG-lQ-9wD" id="3Rc-k3-5VW"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -1824,7 +1886,7 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="270" y="716.5"/>
+            <point key="canvasLocation" x="75" y="858"/>
         </scene>
     </scenes>
 </document>

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43BDA35021A3E90900B1748B /* SnapKit.framework.dSYM in Frameworks */ = {isa = PBXBuildFile; fileRef = 43BDA34F21A3E90900B1748B /* SnapKit.framework.dSYM */; };
+		43BDA35221A3FADD00B1748B /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43BDA34D21A3E86F00B1748B /* SnapKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		43BDA35421A3FE6400B1748B /* MainPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BDA35321A3FE6400B1748B /* MainPageController.swift */; };
+		43BDA35621A406BE00B1748B /* ImportPatientVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BDA35521A406BE00B1748B /* ImportPatientVC.swift */; };
 		43D21409219D050E00F9BA22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D21408219D050E00F9BA22 /* AppDelegate.swift */; };
 		43D2140B219D050E00F9BA22 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D2140A219D050E00F9BA22 /* ViewController.swift */; };
 		43D2140D219D051100F9BA22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43D2140C219D051100F9BA22 /* Assets.xcassets */; };
@@ -33,6 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		43BDA34D21A3E86F00B1748B /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/Mac/SnapKit.framework; sourceTree = "<group>"; };
+		43BDA34F21A3E90900B1748B /* SnapKit.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SnapKit.framework.dSYM; path = Carthage/Build/Mac/SnapKit.framework.dSYM; sourceTree = "<group>"; };
+		43BDA35321A3FE6400B1748B /* MainPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageController.swift; sourceTree = "<group>"; };
+		43BDA35521A406BE00B1748B /* ImportPatientVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportPatientVC.swift; sourceTree = "<group>"; };
 		43D21405219D050E00F9BA22 /* TPSPS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TPSPS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43D21408219D050E00F9BA22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43D2140A219D050E00F9BA22 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -53,6 +61,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43BDA35221A3FADD00B1748B /* SnapKit.framework in Frameworks */,
+				43BDA35021A3E90900B1748B /* SnapKit.framework.dSYM in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +83,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		43BDA34C21A3E86F00B1748B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				43BDA34F21A3E90900B1748B /* SnapKit.framework.dSYM */,
+				43BDA34D21A3E86F00B1748B /* SnapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		43D213FC219D050E00F9BA22 = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +99,7 @@
 				43D2141A219D051200F9BA22 /* TPSPSTests */,
 				43D21425219D051200F9BA22 /* TPSPSUITests */,
 				43D21406219D050E00F9BA22 /* Products */,
+				43BDA34C21A3E86F00B1748B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,7 +117,9 @@
 			isa = PBXGroup;
 			children = (
 				43D21408219D050E00F9BA22 /* AppDelegate.swift */,
+				43BDA35321A3FE6400B1748B /* MainPageController.swift */,
 				43D2140A219D050E00F9BA22 /* ViewController.swift */,
+				43BDA35521A406BE00B1748B /* ImportPatientVC.swift */,
 				43D2140C219D051100F9BA22 /* Assets.xcassets */,
 				43D2140E219D051100F9BA22 /* Main.storyboard */,
 				43D21411219D051100F9BA22 /* Info.plist */,
@@ -254,6 +276,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43BDA35421A3FE6400B1748B /* MainPageController.swift in Sources */,
+				43BDA35621A406BE00B1748B /* ImportPatientVC.swift in Sources */,
 				43D2140B219D050E00F9BA22 /* ViewController.swift in Sources */,
 				43D21409219D050E00F9BA22 /* AppDelegate.swift in Sources */,
 			);
@@ -424,6 +448,10 @@
 				CODE_SIGN_ENTITLEMENTS = TPSPS/TPSPS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = TPSPS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -442,6 +470,10 @@
 				CODE_SIGN_ENTITLEMENTS = TPSPS/TPSPS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = TPSPS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
