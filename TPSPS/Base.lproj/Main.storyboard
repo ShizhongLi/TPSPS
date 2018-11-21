@@ -970,6 +970,63 @@
             </objects>
             <point key="canvasLocation" x="1019" y="858"/>
         </scene>
+        <!--Search Similar PatientVC-->
+        <scene sceneID="kDd-TI-OB2">
+            <objects>
+                <viewController storyboardIdentifier="SearchSimilarPatientVC" id="DG1-Cb-QoR" customClass="SearchSimilarPatientVC" customModule="TPSPS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="7S6-lH-FAy">
+                        <rect key="frame" x="0.0" y="0.0" width="870" height="590"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4i4-Yq-3ZQ">
+                                <rect key="frame" x="34" y="511" width="110" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="A9D-71-1Sg"/>
+                                    <constraint firstAttribute="width" constant="98" id="FNU-5C-f0g"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="返回" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="25f-lQ-zk8">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="clickBackBtn:" target="DG1-Cb-QoR" id="d9J-vH-a8e"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lBL-Km-Se2">
+                                <rect key="frame" x="726" y="511" width="110" height="33"/>
+                                <buttonCell key="cell" type="push" title="主页" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="bnx-zg-nVY">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="clickBackToHomeBtn:" target="DG1-Cb-QoR" id="hrs-e8-yu0"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zxE-MV-cn0">
+                                <rect key="frame" x="313" y="502" width="244" height="48"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="相似患者查找" id="UhD-6G-Ne8">
+                                    <font key="font" metaFont="system" size="40"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="zxE-MV-cn0" firstAttribute="top" secondItem="7S6-lH-FAy" secondAttribute="top" constant="40" id="1DW-PS-caW"/>
+                            <constraint firstItem="zxE-MV-cn0" firstAttribute="centerX" secondItem="7S6-lH-FAy" secondAttribute="centerX" id="5kb-MM-rUj"/>
+                            <constraint firstAttribute="trailing" secondItem="lBL-Km-Se2" secondAttribute="trailing" constant="40" id="Fdb-FK-hEg"/>
+                            <constraint firstItem="lBL-Km-Se2" firstAttribute="centerY" secondItem="4i4-Yq-3ZQ" secondAttribute="centerY" id="Qnn-DN-LWT"/>
+                            <constraint firstItem="4i4-Yq-3ZQ" firstAttribute="top" secondItem="7S6-lH-FAy" secondAttribute="top" constant="50" id="Vto-X7-kSD"/>
+                            <constraint firstItem="4i4-Yq-3ZQ" firstAttribute="leading" secondItem="7S6-lH-FAy" secondAttribute="leading" constant="40" id="d8X-Vg-A3j"/>
+                            <constraint firstItem="lBL-Km-Se2" firstAttribute="width" secondItem="4i4-Yq-3ZQ" secondAttribute="width" id="gYO-fr-6gC"/>
+                            <constraint firstItem="lBL-Km-Se2" firstAttribute="height" secondItem="4i4-Yq-3ZQ" secondAttribute="height" id="vqD-ua-WiP"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="6v3-1C-qsT" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1952" y="858"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>

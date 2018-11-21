@@ -12,7 +12,8 @@ class MainPageController: NSPageController, NSPageControllerDelegate {
     
     var orderedViewControllers: [NSViewController] = {
         return [NSStoryboard(name: "Main", bundle:nil).instantiateController(withIdentifier: "InitVC") as! NSViewController,
-                NSStoryboard(name: "Main", bundle:nil).instantiateController(withIdentifier: "ImportPatientVC") as! NSViewController
+                NSStoryboard(name: "Main", bundle:nil).instantiateController(withIdentifier: "ImportPatientVC") as! NSViewController,
+                NSStoryboard(name: "Main", bundle:nil).instantiateController(withIdentifier: "SearchSimilarPatientVC") as! NSViewController
                 ]
     }()
 
@@ -31,6 +32,8 @@ class MainPageController: NSPageController, NSPageControllerDelegate {
             return "InitVC"
         case 1 :
             return "ImportPatientVC"
+        case 2:
+            return "SearchSimilarPatientVC"
         default :
             return "InitVC"
         }
@@ -45,6 +48,11 @@ class MainPageController: NSPageController, NSPageControllerDelegate {
             
         } else if identifier == "ImportPatientVC" {
             let vc = self.storyboard?.instantiateController(withIdentifier: identifier) as! ImportPatientVC
+            vc.pageController = self
+            return vc
+            
+        } else if identifier == "SearchSimilarPatientVC" {
+            let vc = self.storyboard?.instantiateController(withIdentifier: identifier) as! SearchSimilarPatientVC
             vc.pageController = self
             return vc
             

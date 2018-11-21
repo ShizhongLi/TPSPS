@@ -7,10 +7,15 @@
 //
 
 import Cocoa
+import Python
 
 class ImportPatientVC: NSViewController {
     
     var pageController:MainPageController?
+    
+//    let np = Python.impo
+//    let a = np.arange(15).reshape(3, 5)
+//    let b = np.array([6, 7, 8])
     
     @IBOutlet weak var patientID: NSTextField!
     @IBOutlet weak var patientInHospitalID: NSTextField!
@@ -23,6 +28,7 @@ class ImportPatientVC: NSViewController {
     }
     
     @IBAction func clickBackBtn(_ sender: Any) {
+        
         if (self.pageController != nil) {
             self.pageController?.selectedIndex = 0
         }
@@ -32,12 +38,16 @@ class ImportPatientVC: NSViewController {
     @IBAction func clickSearchByIDBtn(_ sender: Any) {
     }
     
-    
     @IBAction func clickResetBtn(_ sender: NSButton) {
     }
     
     @IBAction func clickSearchSimilarPatientBtn(_ sender: NSButton) {
+        
+        if (self.pageController != nil) {
+            self.pageController?.selectedIndex = 2
+        }
     }
+    
     
     
 }
