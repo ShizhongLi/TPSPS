@@ -7,15 +7,11 @@
 //
 
 import Cocoa
-import Python
+import SwiftyJSON
 
 class ImportPatientVC: NSViewController {
     
     var pageController:MainPageController?
-    
-//    let np = Python.impo
-//    let a = np.arange(15).reshape(3, 5)
-//    let b = np.array([6, 7, 8])
     
     @IBOutlet weak var patientID: NSTextField!
     @IBOutlet weak var patientInHospitalID: NSTextField!
@@ -25,6 +21,8 @@ class ImportPatientVC: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+        
+        testReadJSON()
     }
     
     @IBAction func clickBackBtn(_ sender: Any) {
@@ -48,6 +46,19 @@ class ImportPatientVC: NSViewController {
         }
     }
     
+    func testReadJSON() {
+        let path = Bundle.main.path(forResource: "patientInfo", ofType: "json")
+        let jsonData = NSData(contentsOfFile: path!)
+        var json: JSON = JSON()
+        do {
+            json = try JSON(data:jsonData! as Data)
+        } catch {
+        
+        }
+        
+        print("Json Count:" + String(json.count))
+        print(json[0])
+    }
     
     
 }

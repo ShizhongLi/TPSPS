@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		433DB0CF21A52EF0007B05ED /* SearchSimilarPatientVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433DB0CE21A52EF0007B05ED /* SearchSimilarPatientVC.swift */; };
-		43BDA35021A3E90900B1748B /* SnapKit.framework.dSYM in Frameworks */ = {isa = PBXBuildFile; fileRef = 43BDA34F21A3E90900B1748B /* SnapKit.framework.dSYM */; };
-		43BDA35221A3FADD00B1748B /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43BDA34D21A3E86F00B1748B /* SnapKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		439EF31721A682E6006064D5 /* patientInfo.csv in Resources */ = {isa = PBXBuildFile; fileRef = 439EF31621A682E6006064D5 /* patientInfo.csv */; };
+		439EF32521A699A1006064D5 /* patientInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 439EF32421A699A1006064D5 /* patientInfo.json */; };
 		43BDA35421A3FE6400B1748B /* MainPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BDA35321A3FE6400B1748B /* MainPageController.swift */; };
 		43BDA35621A406BE00B1748B /* ImportPatientVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BDA35521A406BE00B1748B /* ImportPatientVC.swift */; };
 		43D21409219D050E00F9BA22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D21408219D050E00F9BA22 /* AppDelegate.swift */; };
@@ -18,6 +18,8 @@
 		43D21410219D051100F9BA22 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43D2140E219D051100F9BA22 /* Main.storyboard */; };
 		43D2141C219D051200F9BA22 /* TPSPSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D2141B219D051200F9BA22 /* TPSPSTests.swift */; };
 		43D21427219D051200F9BA22 /* TPSPSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D21426219D051200F9BA22 /* TPSPSUITests.swift */; };
+		43D9EEAB21A6A1CD009D5AC3 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43BDA34D21A3E86F00B1748B /* SnapKit.framework */; };
+		43D9EEAD21A6A1DE009D5AC3 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D9EEAC21A6A1DD009D5AC3 /* SwiftyJSON.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +41,9 @@
 
 /* Begin PBXFileReference section */
 		433DB0CE21A52EF0007B05ED /* SearchSimilarPatientVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSimilarPatientVC.swift; sourceTree = "<group>"; };
+		439EF31621A682E6006064D5 /* patientInfo.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = patientInfo.csv; sourceTree = "<group>"; };
+		439EF32421A699A1006064D5 /* patientInfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = patientInfo.json; sourceTree = "<group>"; };
 		43BDA34D21A3E86F00B1748B /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/Mac/SnapKit.framework; sourceTree = "<group>"; };
-		43BDA34F21A3E90900B1748B /* SnapKit.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SnapKit.framework.dSYM; path = Carthage/Build/Mac/SnapKit.framework.dSYM; sourceTree = "<group>"; };
 		43BDA35321A3FE6400B1748B /* MainPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageController.swift; sourceTree = "<group>"; };
 		43BDA35521A406BE00B1748B /* ImportPatientVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportPatientVC.swift; sourceTree = "<group>"; };
 		43D21405219D050E00F9BA22 /* TPSPS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TPSPS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,6 +59,7 @@
 		43D21422219D051200F9BA22 /* TPSPSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TPSPSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		43D21426219D051200F9BA22 /* TPSPSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPSPSUITests.swift; sourceTree = "<group>"; };
 		43D21428219D051200F9BA22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43D9EEAC21A6A1DD009D5AC3 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/Mac/SwiftyJSON.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,8 +67,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43BDA35221A3FADD00B1748B /* SnapKit.framework in Frameworks */,
-				43BDA35021A3E90900B1748B /* SnapKit.framework.dSYM in Frameworks */,
+				43D9EEAD21A6A1DE009D5AC3 /* SwiftyJSON.framework in Frameworks */,
+				43D9EEAB21A6A1CD009D5AC3 /* SnapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,7 +92,7 @@
 		43BDA34C21A3E86F00B1748B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				43BDA34F21A3E90900B1748B /* SnapKit.framework.dSYM */,
+				43D9EEAC21A6A1DD009D5AC3 /* SwiftyJSON.framework */,
 				43BDA34D21A3E86F00B1748B /* SnapKit.framework */,
 			);
 			name = Frameworks;
@@ -127,6 +131,8 @@
 				43D2140E219D051100F9BA22 /* Main.storyboard */,
 				43D21411219D051100F9BA22 /* Info.plist */,
 				43D21412219D051200F9BA22 /* TPSPS.entitlements */,
+				439EF31621A682E6006064D5 /* patientInfo.csv */,
+				439EF32421A699A1006064D5 /* patientInfo.json */,
 			);
 			path = TPSPS;
 			sourceTree = "<group>";
@@ -159,6 +165,7 @@
 				43D21401219D050E00F9BA22 /* Sources */,
 				43D21402219D050E00F9BA22 /* Frameworks */,
 				43D21403219D050E00F9BA22 /* Resources */,
+				439EF32121A6882B006064D5 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -253,6 +260,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				439EF31721A682E6006064D5 /* patientInfo.csv in Resources */,
+				439EF32521A699A1006064D5 /* patientInfo.json in Resources */,
 				43D2140D219D051100F9BA22 /* Assets.xcassets in Resources */,
 				43D21410219D051100F9BA22 /* Main.storyboard in Resources */,
 			);
@@ -273,6 +282,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		439EF32121A6882B006064D5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/Mac/SwiftyJSON.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/SnapKit.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		43D21401219D050E00F9BA22 /* Sources */ = {

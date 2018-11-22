@@ -7,7 +7,6 @@
 //
 
 import Cocoa
-import SnapKit
 
 class ViewController: NSViewController {
     
@@ -80,7 +79,7 @@ class ViewController: NSViewController {
     }
     
     override func viewDidAppear() {
-        //TODO: 无效，暂时不知原因
+        //TODO: 无效，暂时不知原因,从其他页面返回时有效
         navView!.layer?.backgroundColor = NSColor.green.cgColor
         
     }
