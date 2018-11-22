@@ -20,6 +20,7 @@
 		43D21427219D051200F9BA22 /* TPSPSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D21426219D051200F9BA22 /* TPSPSUITests.swift */; };
 		43D9EEAB21A6A1CD009D5AC3 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43BDA34D21A3E86F00B1748B /* SnapKit.framework */; };
 		43D9EEAD21A6A1DE009D5AC3 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D9EEAC21A6A1DD009D5AC3 /* SwiftyJSON.framework */; };
+		43D9EEAF21A6B2E0009D5AC3 /* patientInfo_new.json in Resources */ = {isa = PBXBuildFile; fileRef = 43D9EEAE21A6B2E0009D5AC3 /* patientInfo_new.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		43D21426219D051200F9BA22 /* TPSPSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPSPSUITests.swift; sourceTree = "<group>"; };
 		43D21428219D051200F9BA22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43D9EEAC21A6A1DD009D5AC3 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/Mac/SwiftyJSON.framework; sourceTree = "<group>"; };
+		43D9EEAE21A6B2E0009D5AC3 /* patientInfo_new.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = patientInfo_new.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 				43D21412219D051200F9BA22 /* TPSPS.entitlements */,
 				439EF31621A682E6006064D5 /* patientInfo.csv */,
 				439EF32421A699A1006064D5 /* patientInfo.json */,
+				43D9EEAE21A6B2E0009D5AC3 /* patientInfo_new.json */,
 			);
 			path = TPSPS;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 			files = (
 				439EF31721A682E6006064D5 /* patientInfo.csv in Resources */,
 				439EF32521A699A1006064D5 /* patientInfo.json in Resources */,
+				43D9EEAF21A6B2E0009D5AC3 /* patientInfo_new.json in Resources */,
 				43D2140D219D051100F9BA22 /* Assets.xcassets in Resources */,
 				43D21410219D051100F9BA22 /* Main.storyboard in Resources */,
 			);

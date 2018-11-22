@@ -11,6 +11,9 @@ import SwiftyJSON
 
 class ImportPatientVC: NSViewController {
     
+    var localDataJSON: JSON?
+    var currentPatientInfo: JSON?
+    
     var pageController:MainPageController?
     
     @IBOutlet weak var patientID: NSTextField!
@@ -34,6 +37,34 @@ class ImportPatientVC: NSViewController {
     
     
     @IBAction func clickSearchByIDBtn(_ sender: Any) {
+        
+        if self.patientInHospitalID.stringValue == "" {
+            func dialogOKCancel(question: String, text: String) -> Bool {
+                let myPopup: NSAlert = NSAlert()
+                myPopup.messageText = question
+                myPopup.informativeText = text
+                myPopup.alertStyle = NSAlert.Style.warning
+                myPopup.addButton(withTitle: "好的")
+                myPopup.addButton(withTitle: "取消")
+                return myPopup.runModal() == NSApplication.ModalResponse.alertFirstButtonReturn
+            }
+            
+            let answer = dialogOKCancel(question: "您是否未输入患者住院ID?", text: "未输入则无法查找")
+            print(answer)
+            
+        } else {
+            for patientInfo in localDataJSON!["data"] {
+//                if (patientInfo as JSON)[0] == self.patientInHospitalID.stringValue {
+//                    self.currentPatientInfo = patientInfo
+//                    print(self.currentPatientInfo)
+//
+//                } else {
+//
+//                }
+            }
+            
+        }
+        
     }
     
     @IBAction func clickResetBtn(_ sender: NSButton) {
@@ -47,17 +78,18 @@ class ImportPatientVC: NSViewController {
     }
     
     func testReadJSON() {
-        let path = Bundle.main.path(forResource: "patientInfo", ofType: "json")
+        let path = Bundle.main.path(forResource: "patientInfo_new", ofType: "json")
         let jsonData = NSData(contentsOfFile: path!)
-        var json: JSON = JSON()
+//        var json: JSON = JSON()
         do {
-            json = try JSON(data:jsonData! as Data)
+            localDataJSON = try JSON(data:jsonData! as Data)
         } catch {
         
         }
-        
-        print("Json Count:" + String(json.count))
-        print(json[0])
+        print(localDataJSON!["data"].count)
+        print(localDataJSON!["data"][0].count)
+        print(localDataJSON!["columns"])
+        print(localDataJSON!["index"])
     }
     
     
