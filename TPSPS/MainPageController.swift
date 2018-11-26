@@ -7,8 +7,16 @@
 //
 
 import Cocoa
+import SwiftyJSON
 
 class MainPageController: NSPageController, NSPageControllerDelegate {
+    
+    var localDataJSON: JSON?
+    var currentPatientInfo: JSON?
+    
+    var mainVC: ViewController?
+    var importPatientVC: ImportPatientVC?
+    var searchSimilarPatientVC: SearchSimilarPatientVC?
     
     var orderedViewControllers: [NSViewController] = {
         return [NSStoryboard(name: "Main", bundle:nil).instantiateController(withIdentifier: "InitVC") as! NSViewController,
@@ -42,19 +50,23 @@ class MainPageController: NSPageController, NSPageControllerDelegate {
     func pageController(_ pageController: NSPageController, viewControllerForIdentifier identifier: String) -> NSViewController {
         
         if identifier == "InitVC" {
-            let vc = self.storyboard?.instantiateController(withIdentifier: identifier) as! ViewController
-            vc.pageController = self
-            return vc
+            self.mainVC = self.storyboard?.instantiateController(withIdentifier: identifier) as? ViewController
+            self.mainVC!.pageController = self
+            return self.mainVC!
             
         } else if identifier == "ImportPatientVC" {
-            let vc = self.storyboard?.instantiateController(withIdentifier: identifier) as! ImportPatientVC
-            vc.pageController = self
-            return vc
+            self.importPatientVC = self.storyboard?.instantiateController(withIdentifier: identifier) as? ImportPatientVC
+            self.importPatientVC!.pageController = self
+            return self.importPatientVC!
             
         } else if identifier == "SearchSimilarPatientVC" {
-            let vc = self.storyboard?.instantiateController(withIdentifier: identifier) as! SearchSimilarPatientVC
-            vc.pageController = self
-            return vc
+            self.searchSimilarPatientVC = self.storyboard?.instantiateController(withIdentifier: identifier) as? SearchSimilarPatientVC
+            self.searchSimilarPatientVC!.pageController = self
+  
+            self.searchSimilarPatientVC?.currentPatientInfo = self.currentPatientInfo
+            self.searchSimilarPatientVC?.localDataJSON = self.localDataJSON
+            
+            return self.searchSimilarPatientVC!
             
         } else {
             return self.storyboard?.instantiateController(withIdentifier: identifier) as! NSViewController
