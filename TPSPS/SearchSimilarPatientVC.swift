@@ -15,6 +15,10 @@ class SearchSimilarPatientVC: NSViewController, NSTableViewDelegate, NSTableView
     
     var localDataJSON: JSON?
     var currentPatientInfo: JSON?
+    var similarPatient1Info: JSON?
+    var similarPatient2Info: JSON?
+    var similarPatient3Info: JSON?
+    
     
     @IBOutlet weak var patientInfoTV: NSTableView!
     
@@ -52,6 +56,12 @@ class SearchSimilarPatientVC: NSViewController, NSTableViewDelegate, NSTableView
             strIdt = "PatientInfoAttrNameCellView"
         } else if columnID!.rawValue == "PatientInfoAttrValueColumn" {
             strIdt = "PatientInfoAttrValueCellView"
+        } else if columnID!.rawValue == "Similar1Column" {
+            strIdt = "Similar1Cell"
+        } else if columnID!.rawValue == "Similar2Column" {
+            strIdt = "Similar2Cell"
+        } else if columnID!.rawValue == "Similar3Column" {
+            strIdt = "Similar3Cell"
         }
         
         let cell: NSTableCellView = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: strIdt), owner: self) as! NSTableCellView
@@ -65,6 +75,25 @@ class SearchSimilarPatientVC: NSViewController, NSTableViewDelegate, NSTableView
         } else if columnID!.rawValue == "PatientInfoAttrValueColumn" {
             cell.layer?.backgroundColor = NSColor.orange.cgColor
             cell.textField?.stringValue = self.currentPatientInfo?[row].string ?? "无"
+            
+        } else if columnID!.rawValue == "Similar1Column" {
+            cell.layer?.backgroundColor = NSColor.purple.cgColor
+            
+            if self.similarPatient1Info != nil {
+                cell.textField?.stringValue = self.similarPatient1Info?[row].string ?? "无"
+            }
+            
+        } else if columnID!.rawValue == "Similar2Column" {
+            cell.layer?.backgroundColor = NSColor.orange.cgColor
+            
+            if self.similarPatient2Info != nil {
+                cell.textField?.stringValue = self.similarPatient2Info?[row].string ?? "无"
+            }
+        } else if columnID!.rawValue == "Similar3Column" {
+            cell.layer?.backgroundColor = NSColor.purple.cgColor
+            if self.similarPatient3Info != nil {
+                cell.textField?.stringValue = self.similarPatient3Info?[row].string ?? "无"
+            }
         }
         
         
