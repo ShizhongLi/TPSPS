@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		433DB0CF21A52EF0007B05ED /* SearchSimilarPatientVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433DB0CE21A52EF0007B05ED /* SearchSimilarPatientVC.swift */; };
+		4394337B21AE76E800930F33 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4394337A21AE76E800930F33 /* Alamofire.framework */; };
 		439EF31721A682E6006064D5 /* patientInfo.csv in Resources */ = {isa = PBXBuildFile; fileRef = 439EF31621A682E6006064D5 /* patientInfo.csv */; };
 		439EF32521A699A1006064D5 /* patientInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 439EF32421A699A1006064D5 /* patientInfo.json */; };
 		43BDA35421A3FE6400B1748B /* MainPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BDA35321A3FE6400B1748B /* MainPageController.swift */; };
@@ -42,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		433DB0CE21A52EF0007B05ED /* SearchSimilarPatientVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSimilarPatientVC.swift; sourceTree = "<group>"; };
+		4394337A21AE76E800930F33 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/Mac/Alamofire.framework; sourceTree = "<group>"; };
 		439EF31621A682E6006064D5 /* patientInfo.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = patientInfo.csv; sourceTree = "<group>"; };
 		439EF32421A699A1006064D5 /* patientInfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = patientInfo.json; sourceTree = "<group>"; };
 		43BDA34D21A3E86F00B1748B /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/Mac/SnapKit.framework; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4394337B21AE76E800930F33 /* Alamofire.framework in Frameworks */,
 				43D9EEAD21A6A1DE009D5AC3 /* SwiftyJSON.framework in Frameworks */,
 				43D9EEAB21A6A1CD009D5AC3 /* SnapKit.framework in Frameworks */,
 			);
@@ -94,6 +97,7 @@
 		43BDA34C21A3E86F00B1748B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4394337A21AE76E800930F33 /* Alamofire.framework */,
 				43D9EEAC21A6A1DD009D5AC3 /* SwiftyJSON.framework */,
 				43BDA34D21A3E86F00B1748B /* SnapKit.framework */,
 			);
@@ -227,6 +231,11 @@
 				TargetAttributes = {
 					43D21404219D050E00F9BA22 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 					43D21416219D051200F9BA22 = {
 						CreatedOnToolsVersion = 10.1;
@@ -298,6 +307,7 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/Mac/SwiftyJSON.framework",
 				"$(SRCROOT)/Carthage/Build/Mac/SnapKit.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/Alamofire.framework",
 			);
 			outputFileListPaths = (
 			);

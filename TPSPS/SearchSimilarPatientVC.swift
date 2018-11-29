@@ -8,6 +8,7 @@
 
 import Cocoa
 import SwiftyJSON
+import Alamofire
 
 class SearchSimilarPatientVC: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
     
@@ -19,6 +20,11 @@ class SearchSimilarPatientVC: NSViewController, NSTableViewDelegate, NSTableView
     var similarPatient2Info: JSON?
     var similarPatient3Info: JSON?
     
+    static let sharedSessionManager: Alamofire.SessionManager = {
+        let configuration = URLSessionConfiguration.default
+        configuration.timeoutIntervalForRequest = 120
+        return Alamofire.SessionManager(configuration: configuration)
+    }()
     
     @IBOutlet weak var patientInfoTV: NSTableView!
     
@@ -27,6 +33,26 @@ class SearchSimilarPatientVC: NSViewController, NSTableViewDelegate, NSTableView
         // Do view setup here.
         self.patientInfoTV.delegate = self
         self.patientInfoTV.dataSource = self
+    }
+    override func viewDidAppear() {
+        if self.currentPatientInfo != nil {
+            
+            let inpatientID = self.currentPatientInfo![0].string!
+            SearchSimilarPatientVC.sharedSessionManager.request("http://192.168.0.162:8080/similarpatient/\(inpatientID)").responseJSON { response in //similarpatient/\(inpatientID)
+                print("Request: \(String(describing: response.request))")   // original url request
+                print("Response: \(String(describing: response.response))") // http url response
+                print("Result: \(response.result)")                         // response serialization result
+                
+                if let json = response.result.value {
+                    print("JSON: \(json)") // serialized json response
+                }
+                
+                if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+                    print("Data: \(utf8Text)") // original server data as UTF8 string
+                }
+            }
+        }
+        
     }
     
     @IBAction func clickBackBtn(_ sender: NSButton) {
