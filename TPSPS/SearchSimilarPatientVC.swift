@@ -19,6 +19,7 @@ class SearchSimilarPatientVC: NSViewController, NSTableViewDelegate, NSTableView
     var similarPatient1Info: JSON?
     var similarPatient2Info: JSON?
     var similarPatient3Info: JSON?
+    var similarPatientResultJSON: JSON?
     
     static let sharedSessionManager: Alamofire.SessionManager = {
         let configuration = URLSessionConfiguration.default
@@ -37,6 +38,21 @@ class SearchSimilarPatientVC: NSViewController, NSTableViewDelegate, NSTableView
     override func viewDidAppear() {
         if self.currentPatientInfo != nil {
             
+            func dialogOKCancel(question: String, text: String) -> Bool {
+                let myPopup: NSAlert = NSAlert()
+                myPopup.messageText = question
+                myPopup.informativeText = text
+                myPopup.alertStyle = NSAlert.Style.warning
+                myPopup.addButton(withTitle: "开始查找")
+                myPopup.addButton(withTitle: "取消")
+                return myPopup.runModal() == NSApplication.ModalResponse.alertFirstButtonReturn
+            }
+            let answer = dialogOKCancel(question: "即将开始相似患者查找", text: "由于数据量较大，查找过程可能会花费大约1分30秒，完成搜索后会有信息提示，请您耐心等待...是否开始？")
+            
+            if answer == false {
+                return
+            }
+            
             let inpatientID = self.currentPatientInfo![0].string!
             SearchSimilarPatientVC.sharedSessionManager.request("http://192.168.0.162:8080/similarpatient/\(inpatientID)").responseJSON { response in //similarpatient/\(inpatientID)
                 print("Request: \(String(describing: response.request))")   // original url request
@@ -45,11 +61,27 @@ class SearchSimilarPatientVC: NSViewController, NSTableViewDelegate, NSTableView
                 
                 if let json = response.result.value {
                     print("JSON: \(json)") // serialized json response
+ 
                 }
+                
                 
                 if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
                     print("Data: \(utf8Text)") // original server data as UTF8 string
+                    self.similarPatientResultJSON = JSON(data)
+                    self.getFullInfoOfSimilarPatients(result: self.similarPatientResultJSON)
+                    
+                } else {
+                    func dialogOKCancel01(question: String, text: String) -> Bool {
+                        let myPopup: NSAlert = NSAlert()
+                        myPopup.messageText = question
+                        myPopup.informativeText = text
+                        myPopup.alertStyle = NSAlert.Style.warning
+                        myPopup.addButton(withTitle: "好的")
+                        return myPopup.runModal() == NSApplication.ModalResponse.alertFirstButtonReturn
+                    }
+                    let answer = dialogOKCancel01(question: "未找到该患者的相似患者", text: "")
                 }
+                
             }
         }
         
@@ -65,6 +97,64 @@ class SearchSimilarPatientVC: NSViewController, NSTableViewDelegate, NSTableView
         if (self.pageController != nil) {
             self.pageController?.selectedIndex = 0
         }
+    }
+    
+    func getFullInfoOfSimilarPatients(result: JSON?) {
+        if result == nil || result == JSON() {
+            func dialogOKCancel01(question: String, text: String) -> Bool {
+                let myPopup: NSAlert = NSAlert()
+                myPopup.messageText = question
+                myPopup.informativeText = text
+                myPopup.alertStyle = NSAlert.Style.warning
+                myPopup.addButton(withTitle: "好的")
+                return myPopup.runModal() == NSApplication.ModalResponse.alertFirstButtonReturn
+            }
+            let answer = dialogOKCancel01(question: "未找到该患者的相似患者", text: "")
+            
+        } else {
+//            var patient1id = result[0].key
+            var keys = [String]()
+            var foundNum = 0
+            for (key,subJson):(String,JSON) in result! {
+                print("\(key)：\(subJson)")
+                keys.append(key)
+            }
+            
+            let localDataCount = localDataJSON!["data"].count
+            let tempData = localDataJSON!["data"]
+            for i in 0..<localDataCount {
+                if keys.contains(tempData[i][0].string!) {
+                    foundNum += 1
+                    switch foundNum {
+                    case 1:
+                        self.similarPatient1Info = tempData[i]
+                    case 2:
+                        self.similarPatient2Info = tempData[i]
+                    case 3:
+                        self.similarPatient3Info = tempData[i]
+                    default:
+                        break
+                    }
+                
+                    if foundNum >= keys.count {
+                        break
+                    }
+                }
+            }
+            self.patientInfoTV.reloadData()
+            
+            
+            func dialogOKCancel02(question: String, text: String) -> Bool {
+                let myPopup: NSAlert = NSAlert()
+                myPopup.messageText = question
+                myPopup.informativeText = text
+                myPopup.alertStyle = NSAlert.Style.warning
+                myPopup.addButton(withTitle: "好的")
+                return myPopup.runModal() == NSApplication.ModalResponse.alertFirstButtonReturn
+            }
+            let answer = dialogOKCancel02(question: "已找到该患者的相似患者", text: "")
+        }
+        
     }
     
     
